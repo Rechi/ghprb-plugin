@@ -518,6 +518,11 @@ public class GhprbPullRequest {
                 shouldRun = false;
                 triggered = false;
             }
+            if (helper.ifOnlyMergeablePullRequests() && !checkMergeable()) {
+                logger.log(Level.FINEST, "PR has merge conflicts, skipping the build");
+                return;
+            }
+
             if (helper.ifOnlyTriggerPhrase() && !triggered) {
                 LOGGER.log(Level.FINEST, "Trigger only phrase but we are not triggered");
                 shouldRun = false;

@@ -105,6 +105,8 @@ public class GhprbTrigger extends GhprbTriggerBackwardsCompatible {
 
     private final Boolean onlyTriggerPhrase;
 
+    private final Boolean onlyMergeablePullRequests;
+
     private final Boolean useGitHubHooks;
 
     private final Boolean permitAll;
@@ -179,6 +181,7 @@ public class GhprbTrigger extends GhprbTriggerBackwardsCompatible {
                         String cron,
                         String triggerPhrase,
                         Boolean onlyTriggerPhrase,
+                        Boolean onlyMergeablePullRequests,
                         Boolean useGitHubHooks,
                         Boolean permitAll,
                         Boolean autoCloseFailedPullRequests,
@@ -207,6 +210,7 @@ public class GhprbTrigger extends GhprbTriggerBackwardsCompatible {
         this.cron = cron;
         this.triggerPhrase = triggerPhrase;
         this.onlyTriggerPhrase = onlyTriggerPhrase;
+        this.onlyMergeablePullRequests = onlyMergeablePullRequests;
         this.useGitHubHooks = useGitHubHooks;
         this.permitAll = permitAll;
         this.autoCloseFailedPullRequests = autoCloseFailedPullRequests;
@@ -598,6 +602,10 @@ public class GhprbTrigger extends GhprbTriggerBackwardsCompatible {
 
     public Boolean getOnlyTriggerPhrase() {
         return onlyTriggerPhrase != null && onlyTriggerPhrase;
+    }
+
+    public Boolean getOnlyMergeablePullRequests() {
+        return onlyMergeablePullRequests != null && onlyMergeablePullRequests;
     }
 
     public Boolean getUseGitHubHooks() {

@@ -266,6 +266,10 @@ public class Ghprb {
         return trigger.getOnlyTriggerPhrase();
     }
 
+    public boolean ifOnlyMergeablePullRequests() {
+        return trigger.getOnlyMergeablePullRequests();
+    }
+
     public boolean isWhitelisted(GHUser user) {
         return trigger.getPermitAll()
                 || whitelisted().contains(user.getLogin().toLowerCase())

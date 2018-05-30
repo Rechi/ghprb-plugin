@@ -32,6 +32,8 @@ class GhprbTriggerContext implements Context {
 
     boolean onlyTriggerPhrase;
 
+    boolean onlyMergeablePullRequests;
+
     boolean useGitHubHooks;
 
     boolean permitAll;
@@ -199,12 +201,26 @@ class GhprbTriggerContext implements Context {
         this.onlyTriggerPhrase = onlyTriggerPhrase;
     }
 
+    /**
+     * When set, only mergeable the pull request will trigger a build.
+     */
+    public void onlyMergeablePullRequests(boolean onlyMergeablePullRequests) {
+        this.onlyMergeablePullRequests = onlyMergeablePullRequests;
+    }
+
 
     /**
      * When set, only commenting the trigger phrase in the pull request will trigger a build.
      */
     public void onlyTriggerPhrase() {
         onlyTriggerPhrase(true);
+    }
+
+    /**
+     * When set, only mergeable the pull request will trigger a build.
+     */
+    public void onlyMergeablePullRequests() {
+        onlyMergeablePullRequests(true);
     }
 
     /**

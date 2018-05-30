@@ -18,6 +18,9 @@ f.advanced() {
   f.entry(field: "onlyTriggerPhrase", title: "Only use trigger phrase for build triggering") {
     f.checkbox() 
   }
+  f.entry(field: "onlyMergeablePullRequests", title: "Only trigger build if PR is mergeable") {
+    f.checkbox()
+  }
   f.entry(field: "autoCloseFailedPullRequests", title: _("Close failed pull request automatically?")) {
     f.checkbox(default: descriptor.autoCloseFailedPullRequests) 
   }
